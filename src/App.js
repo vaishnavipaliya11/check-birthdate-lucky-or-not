@@ -3,25 +3,25 @@ import React, { useState } from "react";
 import happy from "./happy1.jpg";
 import sad from "./sad.png";
 
-var happyImg = <img alt="happyImage" src={happy} width="30%" height="20%" />;
+const happyImg = <img alt="happyImage" src={happy} width="30%" height="20%" />;
 
-var sadImg = <img alt="sadImage" src={sad} width="30%" height="20%" />;
+const sadImg = <img alt="sadImage" src={sad} width="30%" height="20%" />;
 
-var luckyNo = 0;
+let luckyNo = 0;
 
 export default function App() {
-  var [resultToShow, setResultToShow] = useState(["", ""]);
-  var [userDateInput, setUserDateInput] = useState("");
+  const [resultToShow, setResultToShow] = useState(["", ""]);
+  const [userDateInput, setUserDateInput] = useState("");
 
-  function handelBtnCheck(e) {
+  const handelBtnCheck=(e)=> {
     e.preventDefault();
 
     const dateArray = userDateInput.split("-");
 
-    var sum = 0;
+    let sum = 0;
 
     dateArray.forEach((string) => {
-      for (var i = 0; i < string.length; i++) {
+      for (let i = 0; i < string.length; i++) {
         sum = sum + Number(string[i]);
       }
     });
